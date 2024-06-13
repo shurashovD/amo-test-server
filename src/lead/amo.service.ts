@@ -80,6 +80,17 @@ export class AmoService {
   }
 
   public getLeads = async (params?: Params): Promise<Lead[]> => {
+    function getCustomFieldValues(
+      customFieldsValues: Record<string, any>[],
+      fieldCode: string,
+    ) {
+      return customFieldsValues
+        .filter(({ field_code }) => field_code === fieldCode)
+        .reduce<
+          string[]
+        >((acc, { values }) => [...acc, ...values.map(({ value }) => value)], []);
+    }
+
     try {
       const url = `${domain}${paths.trade}`;
       const { _embedded } = await this._getEntities<{
@@ -111,9 +122,18 @@ export class AmoService {
             .filter(({ id }) =>
               item._embedded?.contacts.some((item) => item.id === id),
             )
-            .map<
-              Lead['contacts'][0]
-            >(({ email, id, name, phone }) => ({ email, id, name, phone }));
+            .map<Lead['contacts'][0]>(({ id, name, custom_fields_values }) => {
+              const email = getCustomFieldValues(
+                custom_fields_values || [],
+                'EMAIL',
+              )[0];
+              const phone = getCustomFieldValues(
+                custom_fields_values || [],
+                'PHONE',
+              )[0];
+
+              return { email, id, name, phone };
+            });
 
           const [status] = statuses
             .filter(({ id }) => id === item.status_id)

@@ -63,6 +63,7 @@ export type AmoContact = {
   email?: string;
   name: string;
   phone?: string;
+  custom_fields_values?: Record<string, any>[];
 } & object;
 
 export type AmoPipeline = {
