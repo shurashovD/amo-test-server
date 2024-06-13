@@ -1,0 +1,75 @@
+{
+    "amo": {
+        "domain": "https://drobotpm.amocrm.ru",
+        "chatDomain": "https://amojo.amocrm.ru",
+        "auth": {
+            "client_id": "977839bb-c8ab-4498-b0fa-3c77e4875e5f",
+            "client_secret": "rN93bq0VjaEAvWGFi50k5IF9tVrUEVmHsefjbiKU9UaDgoQnMMgJUsgpkDvOHadd",
+            "redirect_uri": "https://drobot-pigments-shop.ru/api/amo/handle"
+        },
+        "contact": {
+            "custom_fields_values": [
+                {
+                    "field_id": 329649,
+                    "field_name": "Телефон",
+                    "field_code": "PHONE"
+                },
+                {
+                    "field_id": 329651,
+                    "field_name": "Email",
+                    "field_code": "EMAIL"
+                },
+                {
+                    "field_id": 331359,
+                    "field_name": "Источник лида"
+                },
+                {
+                    "field_id": 331409,
+                    "field_name": "Город"
+                }
+            ]
+        },
+        "trade": {
+            "custom_fields": [
+                {
+                    "field_id": 996787,
+                    "field_name": "Ссылка на оплату Ю SHOP"
+                },
+                {
+                    "field_id": 996789,
+                    "field_name": "Номер заказа SHOP"
+                },
+                {
+                    "field_id": 996945,
+                    "field_name": "SHOP трек отслеживания"
+                }
+            ],
+            "tags": [
+                {
+                    "id": "266369",
+                    "name": "СДЭК"
+                },
+                {
+                    "id": "266367",
+                    "name": "самовывоз"
+                }
+            ]
+        },
+        "amojoId": "c2a3e4bc-5a8f-4232-8bc0-1b5420c07f19",
+        "chatSecret": "82a5929e993eb165b85619018b73e5d9bf6be780",
+        "chatAccountId": "28925767",
+        "chatChannelId": "2e26b16a-08ff-4912-8418-9b37528f42d9",
+        "chatScopeId": "2e26b16a-08ff-4912-8418-9b37528f42d9_c2a3e4bc-5a8f-4232-8bc0-1b5420c07f19",
+        "catalogListId": 3961,
+        "pipelineId": 4449013,
+        "pipelineStatuses": [
+            { "id": "41224258", "name": "Выставлен счет" },
+            { "id": "41224261", "name": "Счет оплачен" },
+            { "id": "41225170", "name": "Заказ собран" },
+            { "id": "41225173", "name": "Заказ отправлен" },
+            { "id": "52420267", "name": "Готов к выдаче" },
+            { "id": "142", "name": "Успешно реализовано" },
+            { "id": "143", "name": "Закрыто и не реализовано" }
+        ]
+    }
+}
